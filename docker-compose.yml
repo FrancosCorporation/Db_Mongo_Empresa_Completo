@@ -1,0 +1,20 @@
+services:
+  db-mongo-empresa-completo:
+    build: .
+    container_name: db-mongo-empresa-completo
+    restart: unless-stopped
+    ports:
+      - "3100:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:7
+    container_name: db-mongo-empresa-completo-mongo
+    restart: unless-stopped
+    volumes:
+      - db-mongo-empresa-completo_mongo_data:/data/db
+volumes:
+  db-mongo-empresa-completo_mongo_data:

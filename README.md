@@ -1,5 +1,24 @@
 # Db Mongo Empresa Completo
 
+## 🐳 Instalação e Execução (Docker) — recomendado
+
+### Pré-requisitos
+- [Docker](https://docs.docker.com/get-docker/) + Docker Compose
+
+### Rodar com Docker
+```bash
+docker compose up --build
+```
+
+
+### Sem Docker (local)
+```bash
+npm install
+npm start
+```
+Servicos necessarios (local): mongo
+
+
 API REST em **Node.js/Express** com **MongoDB**: autenticação JWT, cadastro de
 usuários, comentários e upload de fotos (Cloudinary), documentada com
 **Swagger** e preparada para deploy na **Vercel**.
