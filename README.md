@@ -83,6 +83,9 @@ identidade do token; não aceita e-mail enviado pelo cliente para escolher a con
 O feed público retorna nome, comentário, avaliação e foto, sem expor e-mail ou
 senha.
 
+Senhas novas exigem pelo menos 8 caracteres e aceitam até 72 bytes UTF-8 para evitar o limite de truncamento do bcrypt. O upload aceita somente um arquivo (`fotoPerfil`), de até 5 MB, e tem limite de 10 tentativas por hora e endereço IP.
+Há também um limite geral de 120 requisições por minuto e IP, incluindo `/health`, com limites adicionais para login e cadastro.
+
 ## Desenvolvimento e validações
 
 - `npm run build` gera `swagger_output.json` localmente; o arquivo é ignorado pelo Git.
